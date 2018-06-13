@@ -1,13 +1,18 @@
 package com.fiap.cupom;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
-@Transactional
 public class Cupom {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private Date data;
     private ArrayList<Produto> produtos = new ArrayList<>();
 
